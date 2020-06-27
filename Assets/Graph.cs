@@ -6,6 +6,8 @@
 
     public class Graph : MonoBehaviour
     {
+        private const float drag = 10f;
+
         private readonly IEnumerable<(string Subject, string Predicate, string Object)> triples = new[]
         {
             ("1", "", "1.1"),
@@ -28,6 +30,70 @@
             ("1.4", "", "1.4.2"),
             ("1.4", "", "1.4.3"),
             ("1.4", "", "1.4.4"),
+            ("1.1.1", "", "1.1.1.1"),
+            ("1.1.1", "", "1.1.1.2"),
+            ("1.1.1", "", "1.1.1.3"),
+            ("1.1.1", "", "1.1.1.4"),
+            ("1.1.2", "", "1.1.2.1"),
+            ("1.1.2", "", "1.1.2.2"),
+            ("1.1.2", "", "1.1.2.3"),
+            ("1.1.2", "", "1.1.2.4"),
+            ("1.1.3", "", "1.1.3.1"),
+            ("1.1.3", "", "1.1.3.2"),
+            ("1.1.3", "", "1.1.3.3"),
+            ("1.1.3", "", "1.1.3.4"),
+            ("1.1.4", "", "1.1.4.1"),
+            ("1.1.4", "", "1.1.4.2"),
+            ("1.1.4", "", "1.1.4.3"),
+            ("1.1.4", "", "1.1.4.4"),
+            ("1.2.1", "", "1.2.1.1"),
+            ("1.2.1", "", "1.2.1.2"),
+            ("1.2.1", "", "1.2.1.3"),
+            ("1.2.1", "", "1.2.1.4"),
+            ("1.2.2", "", "1.2.2.1"),
+            ("1.2.2", "", "1.2.2.2"),
+            ("1.2.2", "", "1.2.2.3"),
+            ("1.2.2", "", "1.2.2.4"),
+            ("1.2.3", "", "1.2.3.1"),
+            ("1.2.3", "", "1.2.3.2"),
+            ("1.2.3", "", "1.2.3.3"),
+            ("1.2.3", "", "1.2.3.4"),
+            ("1.2.4", "", "1.2.4.1"),
+            ("1.2.4", "", "1.2.4.2"),
+            ("1.2.4", "", "1.2.4.3"),
+            ("1.2.4", "", "1.2.4.4"),
+            ("1.3.1", "", "1.3.1.1"),
+            ("1.3.1", "", "1.3.1.2"),
+            ("1.3.1", "", "1.3.1.3"),
+            ("1.3.1", "", "1.3.1.4"),
+            ("1.3.2", "", "1.3.2.1"),
+            ("1.3.2", "", "1.3.2.2"),
+            ("1.3.2", "", "1.3.2.3"),
+            ("1.3.2", "", "1.3.2.4"),
+            ("1.3.3", "", "1.3.3.1"),
+            ("1.3.3", "", "1.3.3.2"),
+            ("1.3.3", "", "1.3.3.3"),
+            ("1.3.3", "", "1.3.3.4"),
+            ("1.3.4", "", "1.3.4.1"),
+            ("1.3.4", "", "1.3.4.2"),
+            ("1.3.4", "", "1.3.4.3"),
+            ("1.3.4", "", "1.3.4.4"),
+            ("1.4.1", "", "1.4.1.1"),
+            ("1.4.1", "", "1.4.1.2"),
+            ("1.4.1", "", "1.4.1.3"),
+            ("1.4.1", "", "1.4.1.4"),
+            ("1.4.2", "", "1.4.2.1"),
+            ("1.4.2", "", "1.4.2.2"),
+            ("1.4.2", "", "1.4.2.3"),
+            ("1.4.2", "", "1.4.2.4"),
+            ("1.4.3", "", "1.4.3.1"),
+            ("1.4.3", "", "1.4.3.2"),
+            ("1.4.3", "", "1.4.3.3"),
+            ("1.4.3", "", "1.4.3.4"),
+            ("1.4.4", "", "1.4.4.1"),
+            ("1.4.4", "", "1.4.4.2"),
+            ("1.4.4", "", "1.4.4.3"),
+            ("1.4.4", "", "1.4.4.4"),
         };
 
         public GameObject nodePrototype;
@@ -50,22 +116,33 @@
 
         private void AddEdge((string Subject, string Predicate, string Object) triple)
         {
-            var edgeGO = Instantiate(this.edgePrototype);
-            edgeGO.name = triple.Subject + "-" + triple.Object;
+            var subject = GameObject.Find(triple.Subject);
+            var @object = GameObject.Find(triple.Object);
 
-            var edgeComponent = edgeGO.GetComponent<Edge>();
-            edgeComponent.Subject = GameObject.Find(triple.Subject);
-            edgeComponent.Object = GameObject.Find(triple.Object);
+            // parented to subject node
+            var edge = Instantiate(this.edgePrototype, subject.transform.transform);
+            edge.name = triple.Subject + "-" + triple.Object;
+
+            var edgeComponent = edge.GetComponent<Edge>();
+            edgeComponent.Subject = subject;
+            edgeComponent.Object = @object;
         }
 
-        private void AddNode(string node)
+        private void AddNode(string name)
         {
-            var nodeinstance = Instantiate(this.nodePrototype);
-            nodeinstance.name = node;
+            // parented to this graph
+            var node = Instantiate(this.nodePrototype, this.transform);
+            node.name = name;
 
+            // so it settles down
+            node.GetComponent<Rigidbody>().drag = drag;
+
+            // bright and saturated colours
+            node.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
+            
             // put them somewhere random
             // so layout works
-            nodeinstance.transform.position = new Vector3(Random.Range(0, 1000), Random.Range(0, 1000), Random.Range(0, 1000));
+            node.transform.position = new Vector3(Random.Range(0, 1000), Random.Range(0, 1000), Random.Range(0, 1000));
         }
     }
 }

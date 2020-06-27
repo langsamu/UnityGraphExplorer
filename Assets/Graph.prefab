@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodePrototype: {fileID: 5490101009340832895, guid: 36b8ba0598b3e3e4787d435a55443214,
     type: 3}
-  edgePrototype: {fileID: 3415483008895076302, guid: fe822ecbe91b85d4d982e1e05085f691,
+  edgePrototype: {fileID: 2327860696547465115, guid: ef60b2dfa82aea44d963344432cb7112,
     type: 3}

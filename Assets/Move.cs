@@ -6,6 +6,7 @@
     public class Move : MonoBehaviour
     {
         private const float speed = 4f;
+
         private CharacterController controller;
         private new Transform camera;
 

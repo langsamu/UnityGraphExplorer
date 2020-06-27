@@ -5,7 +5,8 @@
 
     public class Force : MonoBehaviour
     {
-        private const float G = 667.4f;
+        private const float G = 100000000f;
+
         private static readonly ICollection<Force> Forces = new List<Force>();
 
         public void OnEnable()
