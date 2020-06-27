@@ -13,6 +13,9 @@
         public void Start()
         {
             this.line = this.gameObject.AddComponent<LineRenderer>();
+            this.line.startWidth = 10;
+            this.line.endWidth = 10;
+            this.line.GetComponent<Renderer>().material.color = Color.black;
 
             var joint = this.Subject.AddComponent<SpringJoint>();
             joint.spring = 10000f;
