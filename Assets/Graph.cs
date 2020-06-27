@@ -137,9 +137,13 @@
             // so it settles down
             node.GetComponent<Rigidbody>().drag = drag;
 
+            var r = Random.Range(0f, 1f);
+
             // bright and saturated colours
-            node.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
-            
+            node.GetComponent<Renderer>().material.color = Color.HSVToRGB(r, Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
+
+            node.GetComponentInChildren<AudioSource>().pitch = r * 2f;
+
             // put them somewhere random
             // so layout works
             node.transform.position = new Vector3(Random.Range(0, 1000), Random.Range(0, 1000), Random.Range(0, 1000));
