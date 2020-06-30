@@ -1,16 +1,19 @@
 ﻿namespace X
 {
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
+    using System.Xml.Linq;
     using UnityEngine;
+    using UnityEngine.Networking;
 
     public class Graph : MonoBehaviour
     {
-        private const float drag = 10f;
+        private const float drag = 5f;
 
         private readonly IEnumerable<(string Subject, string Predicate, string Object)> triples = new[]
         {
-            ("1", "", "1.1"),
+            ("1", "qwer tyui op asdf ghjk l zxcv bnm", "1.1"),
             ("1", "", "1.2"),
             ("1", "", "1.3"),
             ("1", "", "1.4"),
@@ -101,14 +104,37 @@
 
         public void Start()
         {
-            var nodes = this.triples.Select(t => t.Subject).Union(this.triples.Select(t => t.Object)).Distinct();
+            if (Application.platform != RuntimePlatform.WebGLPlayer)
+            {
+                var path = "eratosthenes.graphml";
+                var graphml = File.OpenText(path).ReadToEnd();
+                this.SendMessage(nameof(Process), graphml);
+            }
+        }
+
+        public void Process(string graphml)
+        {
+            var document = XDocument.Parse(graphml);
+            var @namespace = XNamespace.Get("http://graphml.graphdrawing.org/xmlns");
+            var nodes = document.Descendants(
+                @namespace.GetName("node")).Select(n => (
+                    n.Attribute("id").Value,
+                    n.Element(@namespace.GetName("data")).Value));
+            var edges = document.Descendants(
+                @namespace.GetName("edge")).Select(n => (
+                    n.Attribute("source").Value,
+                    n.Element(@namespace.GetName("data")).Value,
+                    n.Attribute("target").Value));
+
+            //var nodes = this.triples.Select(t => (t.Subject, t.Subject)).Union(this.triples.Select(t => (t.Object, t.Object))).Distinct();
+            //var edges = this.triples;
 
             foreach (var node in nodes)
             {
                 this.AddNode(node);
             }
 
-            foreach (var triple in this.triples)
+            foreach (var triple in edges)
             {
                 this.AddEdge(triple);
             }
@@ -122,17 +148,19 @@
             // parented to subject node
             var edge = Instantiate(this.edgePrototype, subject.transform.transform);
             edge.name = triple.Subject + "-" + triple.Object;
+            edge.GetComponentInChildren<TextMesh>().text = triple.Predicate;
 
             var edgeComponent = edge.GetComponent<Edge>();
             edgeComponent.Subject = subject;
             edgeComponent.Object = @object;
         }
 
-        private void AddNode(string name)
+        private void AddNode((string Id, string Label) data)
         {
             // parented to this graph
             var node = Instantiate(this.nodePrototype, this.transform);
-            node.name = name;
+            node.name = data.Id;
+            node.GetComponentInChildren<TextMesh>().text = data.Label;
 
             // so it settles down
             node.GetComponent<Rigidbody>().drag = drag;
@@ -141,8 +169,6 @@
 
             // bright and saturated colours
             node.GetComponent<Renderer>().material.color = Color.HSVToRGB(r, Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
-
-            node.GetComponentInChildren<AudioSource>().pitch = r * 2f;
 
             // put them somewhere random
             // so layout works

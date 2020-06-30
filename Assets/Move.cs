@@ -23,6 +23,16 @@
             var lateral = this.camera.right * Math.Sign(Input.GetAxis("Horizontal"));
             var direction = logitudinal + lateral;
 
+            if (Input.GetKey(KeyCode.Q))
+            {
+                direction -= this.camera.up;
+            }
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                direction += this.camera.up;
+            }
+
             this.controller.Move(direction * speed);
         }
     }
