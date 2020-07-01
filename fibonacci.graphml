@@ -1,1 +1,379 @@
-<graphml xmlns="http://graphml.graphdrawing.org/xmlns"><key id="edgelabel" for="edge" attr.type="string" /><key id="label" for="node" attr.type="string" /><key id="graphlabel" for="graph" attr.type="string" /><graph edgedefault="directed"><node id="-747005326"><data key="label">http://example.com/fibonacci</data></node><node id="1407000789"><data key="label">http://example.com/Variable</data></node><edge source="-747005326" target="1407000789"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="-1108306912"><data key="label">_:autos27</data></node><node id="-1648461795"><data key="label">http://example.com/Type</data></node><edge source="-1108306912" target="-1648461795"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="-2101553452"><data key="label">System.Func`2</data></node><edge source="-1108306912" target="-2101553452"><data key="edgelabel">http://example.com/typeName</data></edge><node id="2006149556"><data key="label">_:autos29</data></node><edge source="2006149556" target="-1648461795"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="-733624466"><data key="label">System.Int64</data></node><edge source="2006149556" target="-733624466"><data key="edgelabel">http://example.com/typeName</data></edge><node id="1348251943"><data key="label">_:autos28</data></node><edge source="1348251943" target="2006149556"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><node id="-539928007"><data key="label">_:autos30</data></node><edge source="1348251943" target="-539928007"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><node id="-1093302809"><data key="label">_:autos31</data></node><edge source="-1093302809" target="-1648461795"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><edge source="-1093302809" target="-733624466"><data key="edgelabel">http://example.com/typeName</data></edge><edge source="-539928007" target="-1093302809"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><node id="1869124435"><data key="label">http://www.w3.org/1999/02/22-rdf-syntax-ns#nil</data></node><edge source="-539928007" target="1869124435"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><edge source="-1108306912" target="1348251943"><data key="edgelabel">http://example.com/typeArguments</data></edge><edge source="-747005326" target="-1108306912"><data key="edgelabel">http://example.com/parameterType</data></edge><node id="821497127"><data key="label">http://example.com/n</data></node><node id="21262036"><data key="label">http://example.com/Parameter</data></node><edge source="821497127" target="21262036"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="-1941675185"><data key="label">_:autos32</data></node><edge source="-1941675185" target="-1648461795"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><edge source="-1941675185" target="-733624466"><data key="edgelabel">http://example.com/typeName</data></edge><edge source="821497127" target="-1941675185"><data key="edgelabel">http://example.com/parameterType</data></edge><node id="242424215"><data key="label">http://example.com/s</data></node><node id="-674974935"><data key="label">http://example.com/Block</data></node><edge source="242424215" target="-674974935"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="438872655"><data key="label">_:autos33</data></node><edge source="438872655" target="-747005326"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><edge source="438872655" target="1869124435"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><edge source="242424215" target="438872655"><data key="edgelabel">http://example.com/blockVariables</data></edge><node id="-1866138929"><data key="label">_:autos35</data></node><node id="665524751"><data key="label">http://example.com/Binary</data></node><edge source="-1866138929" target="665524751"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="1020204533"><data key="label">http://example.com/ExpressionTypes/Assign</data></node><edge source="-1866138929" target="1020204533"><data key="edgelabel">http://example.com/binaryExpressionType</data></edge><edge source="-1866138929" target="-747005326"><data key="edgelabel">http://example.com/binaryLeft</data></edge><node id="1243393912"><data key="label">_:autos36</data></node><node id="1968407460"><data key="label">http://example.com/Lambda</data></node><edge source="1243393912" target="1968407460"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="1144980415"><data key="label">_:autos37</data></node><edge source="1144980415" target="821497127"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><edge source="1144980415" target="1869124435"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><edge source="1243393912" target="1144980415"><data key="edgelabel">http://example.com/lambdaParameters</data></edge><node id="-1756228788"><data key="label">_:autos38</data></node><node id="-1192855072"><data key="label">http://example.com/Condition</data></node><edge source="-1756228788" target="-1192855072"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="-1263647053"><data key="label">_:autos39</data></node><edge source="-1263647053" target="665524751"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="-410301276"><data key="label">http://example.com/ExpressionTypes/LessThan</data></node><edge source="-1263647053" target="-410301276"><data key="edgelabel">http://example.com/binaryExpressionType</data></edge><edge source="-1263647053" target="821497127"><data key="edgelabel">http://example.com/binaryLeft</data></edge><node id="-2146475317"><data key="label">_:autos40</data></node><node id="-1806469773"><data key="label">http://example.com/Constant</data></node><edge source="-2146475317" target="-1806469773"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="1820227012"><data key="label">2^^http://www.w3.org/2001/XMLSchema#integer</data></node><edge source="-2146475317" target="1820227012"><data key="edgelabel">http://example.com/constantValue</data></edge><edge source="-1263647053" target="-2146475317"><data key="edgelabel">http://example.com/binaryRight</data></edge><edge source="-1756228788" target="-1263647053"><data key="edgelabel">http://example.com/conditionTest</data></edge><edge source="-1756228788" target="821497127"><data key="edgelabel">http://example.com/conditionIfTrue</data></edge><node id="2063982432"><data key="label">_:autos41</data></node><edge source="2063982432" target="665524751"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="-296798730"><data key="label">http://example.com/ExpressionTypes/Add</data></node><edge source="2063982432" target="-296798730"><data key="edgelabel">http://example.com/binaryExpressionType</data></edge><node id="-1989130733"><data key="label">_:autos42</data></node><node id="726156794"><data key="label">http://example.com/Invoke</data></node><edge source="-1989130733" target="726156794"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><edge source="-1989130733" target="-747005326"><data key="edgelabel">http://example.com/invokeExpression</data></edge><node id="670214999"><data key="label">_:autos44</data></node><edge source="670214999" target="665524751"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="434144789"><data key="label">http://example.com/ExpressionTypes/Subtract</data></node><edge source="670214999" target="434144789"><data key="edgelabel">http://example.com/binaryExpressionType</data></edge><edge source="670214999" target="821497127"><data key="edgelabel">http://example.com/binaryLeft</data></edge><node id="1046063200"><data key="label">_:autos45</data></node><edge source="1046063200" target="-1806469773"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><edge source="1046063200" target="1820227012"><data key="edgelabel">http://example.com/constantValue</data></edge><edge source="670214999" target="1046063200"><data key="edgelabel">http://example.com/binaryRight</data></edge><node id="-1984314893"><data key="label">_:autos43</data></node><edge source="-1984314893" target="670214999"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><edge source="-1984314893" target="1869124435"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><edge source="-1989130733" target="-1984314893"><data key="edgelabel">http://example.com/invokeArguments</data></edge><edge source="2063982432" target="-1989130733"><data key="edgelabel">http://example.com/binaryLeft</data></edge><node id="-247897583"><data key="label">_:autos46</data></node><edge source="-247897583" target="726156794"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><edge source="-247897583" target="-747005326"><data key="edgelabel">http://example.com/invokeExpression</data></edge><node id="1129404952"><data key="label">_:autos48</data></node><node id="-2014836538"><data key="label">http://example.com/Unary</data></node><edge source="1129404952" target="-2014836538"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="1979654126"><data key="label">http://example.com/ExpressionTypes/Decrement</data></node><edge source="1129404952" target="1979654126"><data key="edgelabel">http://example.com/unaryExpressionType</data></edge><edge source="1129404952" target="821497127"><data key="edgelabel">http://example.com/unaryOperand</data></edge><node id="190099588"><data key="label">_:autos47</data></node><edge source="190099588" target="1129404952"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><edge source="190099588" target="1869124435"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><edge source="-247897583" target="190099588"><data key="edgelabel">http://example.com/invokeArguments</data></edge><edge source="2063982432" target="-247897583"><data key="edgelabel">http://example.com/binaryRight</data></edge><edge source="-1756228788" target="2063982432"><data key="edgelabel">http://example.com/conditionIfFalse</data></edge><edge source="1243393912" target="-1756228788"><data key="edgelabel">http://example.com/lambdaBody</data></edge><edge source="-1866138929" target="1243393912"><data key="edgelabel">http://example.com/binaryRight</data></edge><node id="1135769123"><data key="label">_:autos34</data></node><edge source="1135769123" target="-1866138929"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><node id="-1570793212"><data key="label">_:autos49</data></node><edge source="1135769123" target="-1570793212"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><node id="1213137735"><data key="label">_:autos50</data></node><edge source="1213137735" target="726156794"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><edge source="1213137735" target="-747005326"><data key="edgelabel">http://example.com/invokeExpression</data></edge><node id="1375823157"><data key="label">_:autos52</data></node><edge source="1375823157" target="-1806469773"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data></edge><node id="739645064"><data key="label">8^^http://www.w3.org/2001/XMLSchema#integer</data></node><edge source="1375823157" target="739645064"><data key="edgelabel">http://example.com/constantValue</data></edge><node id="385610019"><data key="label">_:autos51</data></node><edge source="385610019" target="1375823157"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><edge source="385610019" target="1869124435"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><edge source="1213137735" target="385610019"><data key="edgelabel">http://example.com/invokeArguments</data></edge><edge source="-1570793212" target="1213137735"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data></edge><edge source="-1570793212" target="1869124435"><data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data></edge><edge source="242424215" target="1135769123"><data key="edgelabel">http://example.com/blockExpressions</data></edge></graph></graphml>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="edgelabel" for="edge" attr.type="string" />
+  <key id="label" for="node" attr.type="string" />
+  <key id="graphlabel" for="graph" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="-747005326">
+      <data key="label">http://example.com/fibonacci</data>
+    </node>
+    <node id="1407000789">
+      <data key="label">http://example.com/Variable</data>
+    </node>
+    <edge source="-747005326" target="1407000789">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="-1108306912">
+      <data key="label">_:autos27</data>
+    </node>
+    <node id="-1648461795">
+      <data key="label">http://example.com/Type</data>
+    </node>
+    <edge source="-1108306912" target="-1648461795">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="-2101553452">
+      <data key="label">System.Func`2</data>
+    </node>
+    <edge source="-1108306912" target="-2101553452">
+      <data key="edgelabel">http://example.com/typeName</data>
+    </edge>
+    <node id="2006149556">
+      <data key="label">_:autos29</data>
+    </node>
+    <edge source="2006149556" target="-1648461795">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="-733624466">
+      <data key="label">System.Int64</data>
+    </node>
+    <edge source="2006149556" target="-733624466">
+      <data key="edgelabel">http://example.com/typeName</data>
+    </edge>
+    <node id="1348251943">
+      <data key="label">_:autos28</data>
+    </node>
+    <edge source="1348251943" target="2006149556">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <node id="-539928007">
+      <data key="label">_:autos30</data>
+    </node>
+    <edge source="1348251943" target="-539928007">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <node id="-1093302809">
+      <data key="label">_:autos31</data>
+    </node>
+    <edge source="-1093302809" target="-1648461795">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <edge source="-1093302809" target="-733624466">
+      <data key="edgelabel">http://example.com/typeName</data>
+    </edge>
+    <edge source="-539928007" target="-1093302809">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <node id="1869124435">
+      <data key="label">http://www.w3.org/1999/02/22-rdf-syntax-ns#nil</data>
+    </node>
+    <edge source="-539928007" target="1869124435">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <edge source="-1108306912" target="1348251943">
+      <data key="edgelabel">http://example.com/typeArguments</data>
+    </edge>
+    <edge source="-747005326" target="-1108306912">
+      <data key="edgelabel">http://example.com/parameterType</data>
+    </edge>
+    <node id="821497127">
+      <data key="label">http://example.com/n</data>
+    </node>
+    <node id="21262036">
+      <data key="label">http://example.com/Parameter</data>
+    </node>
+    <edge source="821497127" target="21262036">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="-1941675185">
+      <data key="label">_:autos32</data>
+    </node>
+    <edge source="-1941675185" target="-1648461795">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <edge source="-1941675185" target="-733624466">
+      <data key="edgelabel">http://example.com/typeName</data>
+    </edge>
+    <edge source="821497127" target="-1941675185">
+      <data key="edgelabel">http://example.com/parameterType</data>
+    </edge>
+    <node id="242424215">
+      <data key="label">http://example.com/s</data>
+    </node>
+    <node id="-674974935">
+      <data key="label">http://example.com/Block</data>
+    </node>
+    <edge source="242424215" target="-674974935">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="438872655">
+      <data key="label">_:autos33</data>
+    </node>
+    <edge source="438872655" target="-747005326">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <edge source="438872655" target="1869124435">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <edge source="242424215" target="438872655">
+      <data key="edgelabel">http://example.com/blockVariables</data>
+    </edge>
+    <node id="-1866138929">
+      <data key="label">_:autos35</data>
+    </node>
+    <node id="665524751">
+      <data key="label">http://example.com/Binary</data>
+    </node>
+    <edge source="-1866138929" target="665524751">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="1020204533">
+      <data key="label">http://example.com/ExpressionTypes/Assign</data>
+    </node>
+    <edge source="-1866138929" target="1020204533">
+      <data key="edgelabel">http://example.com/binaryExpressionType</data>
+    </edge>
+    <edge source="-1866138929" target="-747005326">
+      <data key="edgelabel">http://example.com/binaryLeft</data>
+    </edge>
+    <node id="1243393912">
+      <data key="label">_:autos36</data>
+    </node>
+    <node id="1968407460">
+      <data key="label">http://example.com/Lambda</data>
+    </node>
+    <edge source="1243393912" target="1968407460">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="1144980415">
+      <data key="label">_:autos37</data>
+    </node>
+    <edge source="1144980415" target="821497127">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <edge source="1144980415" target="1869124435">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <edge source="1243393912" target="1144980415">
+      <data key="edgelabel">http://example.com/lambdaParameters</data>
+    </edge>
+    <node id="-1756228788">
+      <data key="label">_:autos38</data>
+    </node>
+    <node id="-1192855072">
+      <data key="label">http://example.com/Condition</data>
+    </node>
+    <edge source="-1756228788" target="-1192855072">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="-1263647053">
+      <data key="label">_:autos39</data>
+    </node>
+    <edge source="-1263647053" target="665524751">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="-410301276">
+      <data key="label">http://example.com/ExpressionTypes/LessThan</data>
+    </node>
+    <edge source="-1263647053" target="-410301276">
+      <data key="edgelabel">http://example.com/binaryExpressionType</data>
+    </edge>
+    <edge source="-1263647053" target="821497127">
+      <data key="edgelabel">http://example.com/binaryLeft</data>
+    </edge>
+    <node id="-2146475317">
+      <data key="label">_:autos40</data>
+    </node>
+    <node id="-1806469773">
+      <data key="label">http://example.com/Constant</data>
+    </node>
+    <edge source="-2146475317" target="-1806469773">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="1820227012">
+      <data key="label">2^^http://www.w3.org/2001/XMLSchema#integer</data>
+    </node>
+    <edge source="-2146475317" target="1820227012">
+      <data key="edgelabel">http://example.com/constantValue</data>
+    </edge>
+    <edge source="-1263647053" target="-2146475317">
+      <data key="edgelabel">http://example.com/binaryRight</data>
+    </edge>
+    <edge source="-1756228788" target="-1263647053">
+      <data key="edgelabel">http://example.com/conditionTest</data>
+    </edge>
+    <edge source="-1756228788" target="821497127">
+      <data key="edgelabel">http://example.com/conditionIfTrue</data>
+    </edge>
+    <node id="2063982432">
+      <data key="label">_:autos41</data>
+    </node>
+    <edge source="2063982432" target="665524751">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="-296798730">
+      <data key="label">http://example.com/ExpressionTypes/Add</data>
+    </node>
+    <edge source="2063982432" target="-296798730">
+      <data key="edgelabel">http://example.com/binaryExpressionType</data>
+    </edge>
+    <node id="-1989130733">
+      <data key="label">_:autos42</data>
+    </node>
+    <node id="726156794">
+      <data key="label">http://example.com/Invoke</data>
+    </node>
+    <edge source="-1989130733" target="726156794">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <edge source="-1989130733" target="-747005326">
+      <data key="edgelabel">http://example.com/invokeExpression</data>
+    </edge>
+    <node id="670214999">
+      <data key="label">_:autos44</data>
+    </node>
+    <edge source="670214999" target="665524751">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="434144789">
+      <data key="label">http://example.com/ExpressionTypes/Subtract</data>
+    </node>
+    <edge source="670214999" target="434144789">
+      <data key="edgelabel">http://example.com/binaryExpressionType</data>
+    </edge>
+    <edge source="670214999" target="821497127">
+      <data key="edgelabel">http://example.com/binaryLeft</data>
+    </edge>
+    <node id="1046063200">
+      <data key="label">_:autos45</data>
+    </node>
+    <edge source="1046063200" target="-1806469773">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <edge source="1046063200" target="1820227012">
+      <data key="edgelabel">http://example.com/constantValue</data>
+    </edge>
+    <edge source="670214999" target="1046063200">
+      <data key="edgelabel">http://example.com/binaryRight</data>
+    </edge>
+    <node id="-1984314893">
+      <data key="label">_:autos43</data>
+    </node>
+    <edge source="-1984314893" target="670214999">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <edge source="-1984314893" target="1869124435">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <edge source="-1989130733" target="-1984314893">
+      <data key="edgelabel">http://example.com/invokeArguments</data>
+    </edge>
+    <edge source="2063982432" target="-1989130733">
+      <data key="edgelabel">http://example.com/binaryLeft</data>
+    </edge>
+    <node id="-247897583">
+      <data key="label">_:autos46</data>
+    </node>
+    <edge source="-247897583" target="726156794">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <edge source="-247897583" target="-747005326">
+      <data key="edgelabel">http://example.com/invokeExpression</data>
+    </edge>
+    <node id="1129404952">
+      <data key="label">_:autos48</data>
+    </node>
+    <node id="-2014836538">
+      <data key="label">http://example.com/Unary</data>
+    </node>
+    <edge source="1129404952" target="-2014836538">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="1979654126">
+      <data key="label">http://example.com/ExpressionTypes/Decrement</data>
+    </node>
+    <edge source="1129404952" target="1979654126">
+      <data key="edgelabel">http://example.com/unaryExpressionType</data>
+    </edge>
+    <edge source="1129404952" target="821497127">
+      <data key="edgelabel">http://example.com/unaryOperand</data>
+    </edge>
+    <node id="190099588">
+      <data key="label">_:autos47</data>
+    </node>
+    <edge source="190099588" target="1129404952">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <edge source="190099588" target="1869124435">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <edge source="-247897583" target="190099588">
+      <data key="edgelabel">http://example.com/invokeArguments</data>
+    </edge>
+    <edge source="2063982432" target="-247897583">
+      <data key="edgelabel">http://example.com/binaryRight</data>
+    </edge>
+    <edge source="-1756228788" target="2063982432">
+      <data key="edgelabel">http://example.com/conditionIfFalse</data>
+    </edge>
+    <edge source="1243393912" target="-1756228788">
+      <data key="edgelabel">http://example.com/lambdaBody</data>
+    </edge>
+    <edge source="-1866138929" target="1243393912">
+      <data key="edgelabel">http://example.com/binaryRight</data>
+    </edge>
+    <node id="1135769123">
+      <data key="label">_:autos34</data>
+    </node>
+    <edge source="1135769123" target="-1866138929">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <node id="-1570793212">
+      <data key="label">_:autos49</data>
+    </node>
+    <edge source="1135769123" target="-1570793212">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <node id="1213137735">
+      <data key="label">_:autos50</data>
+    </node>
+    <edge source="1213137735" target="726156794">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <edge source="1213137735" target="-747005326">
+      <data key="edgelabel">http://example.com/invokeExpression</data>
+    </edge>
+    <node id="1375823157">
+      <data key="label">_:autos52</data>
+    </node>
+    <edge source="1375823157" target="-1806469773">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</data>
+    </edge>
+    <node id="739645064">
+      <data key="label">8^^http://www.w3.org/2001/XMLSchema#integer</data>
+    </node>
+    <edge source="1375823157" target="739645064">
+      <data key="edgelabel">http://example.com/constantValue</data>
+    </edge>
+    <node id="385610019">
+      <data key="label">_:autos51</data>
+    </node>
+    <edge source="385610019" target="1375823157">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <edge source="385610019" target="1869124435">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <edge source="1213137735" target="385610019">
+      <data key="edgelabel">http://example.com/invokeArguments</data>
+    </edge>
+    <edge source="-1570793212" target="1213137735">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</data>
+    </edge>
+    <edge source="-1570793212" target="1869124435">
+      <data key="edgelabel">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</data>
+    </edge>
+    <edge source="242424215" target="1135769123">
+      <data key="edgelabel">http://example.com/blockExpressions</data>
+    </edge>
+  </graph>
+</graphml>

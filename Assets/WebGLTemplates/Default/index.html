@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>%UNITY_WEB_NAME%</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+    <script src="%UNITY_WEBGL_LOADER_URL%"></script>
+    <script>
+        let overrides = {
+            onProgress: up
+        };
+
+        let unityInstance = UnityLoader.instantiate("unityContainer", "%UNITY_WEBGL_BUILD_URL%", overrides);
+
+        async function up(instance, progress) {
+            if (progress === 1) {
+                var response = await fetch("fibonacci.graphml");
+                var graphml = await response.text();
+                instance.SendMessage("Graph", "Process", graphml);
+            }
+        }
+    </script>
+</head>
+<body id="unityContainer">
+</body>
+</html>
