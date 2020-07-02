@@ -2,6 +2,7 @@
 {
     using System;
     using UnityEngine;
+    using UnityEngine.Animations;
 
     public class Edge : MonoBehaviour
     {
@@ -9,8 +10,7 @@
         private const float spring = 50f;
         private const float tolerance = 250f;
         private Transform line;
-        private Transform orientLine;
-        private Transform orientText;
+        private Transform text;
 
         internal GameObject Subject { get; set; }
 
@@ -18,10 +18,36 @@
 
         public void Start()
         {
-            this.orientLine = this.transform.Find("Orient line");
-            this.line = this.orientLine.Find("Line");
-            this.orientText = this.transform.Find("Orient text");
+            SetupConstraints();
+            SetupComponents();
+            SetupSpring();
+        }
 
+        public void Update()
+        {
+            ScaleLine();
+            AlignText();
+        }
+
+        private void SetupConstraints()
+        {
+            var positionConstraint = this.GetComponent<PositionConstraint>();
+            positionConstraint.SetSource(0, new ConstraintSource { sourceTransform = this.Subject.transform, weight = 1f });
+            positionConstraint.SetSource(1, new ConstraintSource { sourceTransform = this.Object.transform, weight = 1f });
+
+            var lookConstraint = this.GetComponent<LookAtConstraint>();
+            lookConstraint.SetSource(0, new ConstraintSource { sourceTransform = this.Subject.transform, weight = 1f });
+            lookConstraint.worldUpObject = Camera.main.transform;
+        }
+
+        private void SetupComponents()
+        {
+            this.line = this.transform.Find("Line");
+            this.text = this.transform.transform.Find("Text");
+        }
+
+        private void SetupSpring()
+        {
             var joint = this.Subject.AddComponent<SpringJoint>();
             joint.connectedBody = this.Object.GetComponent<Rigidbody>();
             joint.autoConfigureConnectedAnchor = false;
@@ -31,35 +57,23 @@
             joint.tolerance = tolerance;
         }
 
-        public void FixedUpdate()
+        private void ScaleLine()
         {
             var from = this.Subject.transform.position;
             var to = this.Object.transform.position;
-
-            var difference = to - from;
-            var midpoint = difference / 2f;
-
-            this.transform.position = from + midpoint;
+            var midpoint = (to - from) / 2f;
+            var factor = midpoint.magnitude;
 
             // 100 is scale of node?
-            this.line.localScale = new Vector3(width, midpoint.magnitude, width) / 100f;
-
-            this.orientLine.rotation = Quaternion.LookRotation(difference.normalized);
+            this.line.localScale = new Vector3(width, factor, width) / 100f;
         }
 
-        public void Update()
+        private void AlignText()
         {
-            var angleBetweenLineAndCamera = Vector3.SignedAngle(
-                this.line.up,
-                Camera.main.transform.up,
-                Camera.main.transform.forward);
-
-            var angleDirection = Math.Sign(angleBetweenLineAndCamera);
-
-            // align with edge line, adjust so text is not upside down
-            var up = this.line.up * angleDirection;
-
-            this.orientText.LookAt(Camera.main.transform, up);
+            if (Math.Sign(Vector3.Dot(this.text.up, Camera.main.transform.up)) < 0)
+            {
+                this.text.Rotate(Vector3.forward, 180, Space.Self);
+            }
         }
     }
 }

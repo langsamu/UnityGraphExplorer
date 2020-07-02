@@ -1,0 +1,16 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="edgelabel" for="edge" attr.type="string" />
+  <key id="label" for="node" attr.type="string" />
+  <key id="graphlabel" for="graph" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="218766818">
+      <data key="label">node1</data>
+    </node>
+    <node id="166775655">
+      <data key="label">node2</data>
+    </node>
+    <edge source="218766818" target="166775655">
+      <data key="edgelabel">edge</data>
+    </edge>
+  </graph>
+</graphml>
