@@ -70,9 +70,9 @@
 
         private void AlignText()
         {
-            if (Math.Sign(Vector3.Dot(this.text.up, Camera.main.transform.up)) < 0)
+            if (Vector3.Dot(this.text.up, Camera.main.transform.up) < 0f)
             {
-                this.text.Rotate(Vector3.forward, 180, Space.Self);
+                this.text.Rotate(Vector3.forward, 180f, Space.Self);
             }
         }
     }
