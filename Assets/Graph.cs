@@ -5,7 +5,6 @@
     using System.Linq;
     using System.Xml.Linq;
     using UnityEngine;
-    using UnityEngine.Networking;
 
     public class Graph : MonoBehaviour
     {
@@ -148,8 +147,8 @@
             // parented to subject node
             var edge = Instantiate(this.edgePrototype, subject.transform.transform);
             edge.name = triple.Subject + "-" + triple.Object;
-            edge.GetComponentInChildren<TextMesh>().text = triple.Predicate;
-
+            edge.GetComponentInChildren<TextMesh>().text = CleanLabel(triple.Predicate);
+            
             var edgeComponent = edge.GetComponent<Edge>();
             edgeComponent.Subject = subject;
             edgeComponent.Object = @object;
@@ -160,19 +159,27 @@
             // parented to this graph
             var node = Instantiate(this.nodePrototype, this.transform);
             node.name = data.Id;
-            node.GetComponentInChildren<TextMesh>().text = data.Label;
+            node.GetComponentInChildren<TextMesh>().text = CleanLabel(data.Label);
 
             // so it settles down
             node.GetComponent<Rigidbody>().drag = drag;
 
-            var r = Random.Range(0f, 1f);
-
             // bright and saturated colours
-            node.GetComponent<Renderer>().material.color = Color.HSVToRGB(r, Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
+            node.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
 
             // put them somewhere random
             // so layout works
             node.transform.position = new Vector3(Random.Range(0, 1000), Random.Range(0, 1000), Random.Range(0, 1000));
+        }
+
+        private static string CleanLabel(string text)
+        {
+            text = text.Replace("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:");
+            text = text.Replace("http://www.w3.org/2001/XMLSchema#", "xsd:");
+            text = text.Replace("rdf:type", "a");
+            text = text.Replace("http://example.com/", "ex:");
+
+            return text;
         }
     }
 }

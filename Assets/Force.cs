@@ -6,7 +6,7 @@
     public class Force : MonoBehaviour
     {
         private const float G = 100000000f;
-
+        private const float distanceThreshold = 1000f;
         private static readonly ICollection<Force> Forces = new List<Force>();
 
         public void OnEnable()
@@ -23,10 +23,18 @@
         {
             foreach (var force in Forces)
             {
-                if (!ReferenceEquals(force, this))
+                if (ReferenceEquals(force, this))
                 {
-                    this.Apply(force);
+                    continue;
                 }
+
+                if (Vector3.Distance(this.transform.position, force.transform.position) > distanceThreshold)
+                {
+                    continue;
+                }
+
+
+                this.Apply(force);
             }
         }
 

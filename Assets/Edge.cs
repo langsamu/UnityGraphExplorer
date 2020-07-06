@@ -7,8 +7,8 @@
     public class Edge : MonoBehaviour
     {
         private const float width = 10f;
-        private const float spring = 50f;
-        private const float tolerance = 250f;
+        private const float spring = 25f;
+        private const float tolerance = 350f;
         private Transform line;
         private Transform text;
 
