@@ -1,6 +1,5 @@
 ﻿namespace X
 {
-    using System;
     using UnityEngine;
     using UnityEngine.Animations;
 
@@ -11,22 +10,24 @@
         private const float tolerance = 350f;
         private Transform line;
         private Transform text;
+        private Transform arrow;
 
         internal GameObject Subject { get; set; }
 
         internal GameObject Object { get; set; }
 
+
         public void Start()
         {
-            SetupConstraints();
-            SetupComponents();
-            SetupSpring();
+            this.SetupComponents();
+            this.SetupConstraints();
+            this.SetupSpring();
         }
 
         public void Update()
         {
-            ScaleLine();
-            AlignText();
+            this.ScaleLine();
+            this.AlignText();
         }
 
         private void SetupConstraints()
@@ -38,12 +39,16 @@
             var lookConstraint = this.GetComponent<LookAtConstraint>();
             lookConstraint.SetSource(0, new ConstraintSource { sourceTransform = this.Subject.transform, weight = 1f });
             lookConstraint.worldUpObject = Camera.main.transform;
+
+            var positionConstraint2 = this.arrow.GetComponent<PositionConstraint>();
+            positionConstraint2.SetSource(0, new ConstraintSource { sourceTransform = this.Object.transform, weight = 1f });
         }
 
         private void SetupComponents()
         {
             this.line = this.transform.Find("Line");
-            this.text = this.transform.transform.Find("Text");
+            this.text = this.transform.Find("Text");
+            this.arrow = this.transform.Find("Arrow");
         }
 
         private void SetupSpring()
