@@ -169,7 +169,7 @@
 
             // put them somewhere random
             // so layout works
-            node.transform.position = new Vector3(Random.Range(0, 1000), Random.Range(0, 1000), Random.Range(0, 1000));
+            node.transform.position = new Vector3(Random.Range(-500, 500), Random.Range(-500, 500), Random.Range(-500, 500));
         }
 
         private static string CleanLabel(string text)
